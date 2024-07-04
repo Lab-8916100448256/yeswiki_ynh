@@ -92,7 +92,7 @@ SSO_DOMAIN=$(yunohost domain main-domain | sed -e 's/.*: //')
 ynh_replace_string --match_string=");" --replace_string="  'yunohost_sso_domain' => '${SSO_DOMAIN}',\n);" --target_file="$install_dir/wakka.config.php"
 
 # Ensure that scripts are executable
-chmod +x $install_dir/tools/yunohost/private/scripts/*.sh
+chmod 700 $install_dir/tools/yunohost/private/scripts/*.sh
 
 # Add app user in sudoers to authorize to launch yunohost cli commands without password
 ynh_add_config --template="sudoers" --destination="/etc/sudoers.d/$app"

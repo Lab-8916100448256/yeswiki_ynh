@@ -74,7 +74,7 @@ mkdir -p "$install_dir/tools/importer"
 ynh_setup_source --dest_dir="$install_dir/tools/importer" --source_id="importerplugin"
 
 # Ensure that scripts are executable
-chmod +x $install_dir/tools/yunohost/private/scripts/*.sh
+chmod 700 $install_dir/tools/yunohost/private/scripts/*.sh
 
 # Add app user in sudoers to authorize to launch yunohost cli commands without password
 ynh_add_config --template="sudoers" --destination="/etc/sudoers.d/$app"
